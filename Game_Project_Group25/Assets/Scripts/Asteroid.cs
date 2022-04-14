@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Astroid : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
     public GameObject AstroidPrefab;
     public int astroidSpeed;

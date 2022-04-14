@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3929864168244191695}
   - component: {fileID: 3929864168244191694}
   m_Layer: 0
-  m_Name: Astroid Spawner
+  m_Name: Asteroid Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ed67f9d77877d448f1b55c619a2ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AstroidPrefab: {fileID: 1410955390861945900, guid: a09099703959f1e42a15d379d02e35e6, type: 3}
+  AstroidPrefab: {fileID: 1334565595244068455, guid: a09099703959f1e42a15d379d02e35e6, type: 3}
   AstroidFreq: 0
+  AstroidStart: 0
