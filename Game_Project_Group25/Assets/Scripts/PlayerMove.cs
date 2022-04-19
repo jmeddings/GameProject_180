@@ -15,10 +15,7 @@ public class PlayerMove : MonoBehaviour
     //text
     public Text livesText;
     public Text gameOverText;
-    //timer
-    public float timeRemaining = 10;
-    public bool timerIsRunning = false;
-    public Text timeText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,22 +38,7 @@ public class PlayerMove : MonoBehaviour
         {
             add_position += Vector3.right * Time.deltaTime * speed;
         }
-        //GetComponent<Transform>().position += add_position;
-        transform.position += add_position;
-        //if (timerIsRunning)
-        //{
-        //    if (timeRemaining > 0)
-        //    {
-        //        timeRemaining -= Time.deltaTime;
-        //        DisplayTime(timeRemaining);
-        //    }
-        //    else
-        //    {
-        //
-        //        timeRemaining = 0;
-        //        timerIsRunning = false;
-        //    }
-        //}
+        GetComponent<Transform>().position += add_position;
     }
     //respawn and lifes taken
     private void Respawn()
@@ -87,7 +69,15 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.tag == "Exit")
         {
+            Scene_Switch.instance.switchScene(1);
+        }
+        if (other.tag == "Exit2")
+        {
             Scene_Switch.instance.switchScene(2);
+        }
+        if (other.tag == "Exit3")
+        {
+            Scene_Switch.instance.switchScene(3);
         }
     }
 }
