@@ -4,18 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneSwitch : MonoBehaviour
+public class Scene_Switch : MonoBehaviour
 {
     public GameObject player;
     public GameObject mainCamera;
     public GameObject canvas;
 
-    public static SceneSwitch instance;
-
-    //public float timeRemaining = 10;
-    //public bool timerIsRunning = false;
-    //public Text timeText;
-    
+    public static Scene_Switch instance;
 
     // Start is called before the first frame update
     void Start()
@@ -30,20 +25,7 @@ public class SceneSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //if (timerIsRunning)
-        //{
-        //    if (timeRemaining > 0)
-        //    {
-        //        timeRemaining -= Time.deltaTime;
-        //    }
-        //    else
-        //    {
-        //        timeRemaining = 0;
-        //        timerIsRunning = false;
-        //        switchScene(1);
-        //    }
-        //}
+       
     }
     public void switchScene(int sceneNumber)
     {

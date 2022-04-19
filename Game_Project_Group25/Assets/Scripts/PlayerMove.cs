@@ -41,19 +41,21 @@ public class PlayerMove : MonoBehaviour
         {
             add_position += Vector3.right * Time.deltaTime * speed;
         }
-        GetComponent<Transform>().position += add_position;
+        //GetComponent<Transform>().position += add_position;
+        transform.position += add_position;
         //if (timerIsRunning)
         //{
-         //   if (timeRemaining > 0)
-         //   {
-         //       timeRemaining -= Time.deltaTime;
-         //   }
-         //   else
-         //   {
-         //       timeRemaining = 0;
-         //       timerIsRunning = false;
-          //      SceneSwitch.instance.switchScene(1);
-            //}
+        //    if (timeRemaining > 0)
+        //    {
+        //        timeRemaining -= Time.deltaTime;
+        //        DisplayTime(timeRemaining);
+        //    }
+        //    else
+        //    {
+        //
+        //        timeRemaining = 0;
+        //        timerIsRunning = false;
+        //    }
         //}
     }
     //respawn and lifes taken
@@ -77,16 +79,15 @@ public class PlayerMove : MonoBehaviour
             gameOverText.text = "GameOver";
         }
     }
-    private void OnTriggerEnter (Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag =="Enemy")
         {
             Respawn();
         }
-        if(other.tag == "Exit")
+        if (other.tag == "Exit")
         {
-            SceneSwitch.instance.switchScene(1);
+            Scene_Switch.instance.switchScene(2);
         }
     }
-    
 }
