@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
@@ -14,6 +15,10 @@ public class PlayerMove : MonoBehaviour
     //text
     public Text livesText;
     public Text gameOverText;
+    //timer
+    public float timeRemaining = 10;
+    public bool timerIsRunning = false;
+    public Text timeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +42,19 @@ public class PlayerMove : MonoBehaviour
             add_position += Vector3.right * Time.deltaTime * speed;
         }
         GetComponent<Transform>().position += add_position;
+        //if (timerIsRunning)
+        //{
+         //   if (timeRemaining > 0)
+         //   {
+         //       timeRemaining -= Time.deltaTime;
+         //   }
+         //   else
+         //   {
+         //       timeRemaining = 0;
+         //       timerIsRunning = false;
+          //      SceneSwitch.instance.switchScene(1);
+            //}
+        //}
     }
     //respawn and lifes taken
     private void Respawn()
@@ -61,9 +79,14 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.tag =="Enemy")
+        if (other.tag =="Enemy")
         {
             Respawn();
         }
+        if(other.tag == "Exit")
+        {
+            SceneSwitch.instance.switchScene(1);
+        }
     }
+    
 }

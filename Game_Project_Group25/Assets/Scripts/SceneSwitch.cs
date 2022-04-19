@@ -12,9 +12,10 @@ public class SceneSwitch : MonoBehaviour
 
     public static SceneSwitch instance;
 
-    public float timeRemaining = 10;
-    public bool timerIsRunning = false;
-    public Text timeText;
+    //public float timeRemaining = 10;
+    //public bool timerIsRunning = false;
+    //public Text timeText;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +30,20 @@ public class SceneSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timerIsRunning)
-        {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                timeRemaining = 0;
-                timerIsRunning = false;
-                switchScene(1);
-            }
-        }
+        
+        //if (timerIsRunning)
+        //{
+        //    if (timeRemaining > 0)
+        //    {
+        //        timeRemaining -= Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        timeRemaining = 0;
+        //        timerIsRunning = false;
+        //        switchScene(1);
+        //    }
+        //}
     }
     public void switchScene(int sceneNumber)
     {
